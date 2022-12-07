@@ -1,0 +1,21 @@
+// Tablet view
+
+@mixin tablet {
+    @media (min-width: 762px) {
+        @content;
+    }
+}
+
+// Desktop view 
+
+@mixin desktop {
+    @media (min-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin largeDesktop {
+    @media (min-width:1200px) {
+        @content;
+    }
+}

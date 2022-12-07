@@ -1,0 +1,39 @@
+// Fonts
+
+h1,h2,h3,p {
+    font-family: roboto;
+}
+h1{
+    font-size:min(2.1rem);
+    letter-spacing: 1px;
+    
+}
+h2{
+    font-size:min(2rem);   
+    letter-spacing: 2px; 
+}
+h3{
+    font-size:min(1.6rem);    
+    font-weight: 600;
+}
+p{
+    
+    font-size:1.3rem;
+    background: none;
+}
+a{
+    
+    font-size:min(1.4rem);
+    text-decoration: none;
+    background: none;
+}
+a:hover{
+    color: #B58147;
+}
+hr{
+    background:#B58147;
+    width:15%;
+    height: 5px;
+    margin:5px auto 15px;
+}
+$imagehero: "path";

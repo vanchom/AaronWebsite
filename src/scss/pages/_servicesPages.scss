@@ -1,0 +1,132 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
+
+// service pages
+.hero-services{
+
+    // hero images for services pages
+    #extension {
+        background-image: url("/images/extension1.jpg");
+    }
+    #kitchen {
+        background-image: url("/images/kitchen2d.jpg");
+    }
+    #bathroom {
+        background-image: url("/images/bathroom1.jpg");
+    }
+    #loft {
+        background-image: url("/images/loft2b.jpg");
+    }
+    #painting {
+        background-image: url("/images/painting15.jpg");
+    }
+    #groundwork {
+        background-image: url("/images/floor3.jpg");
+
+    }
+    .container{
+        height:min(350px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position:relative;
+        background-color: #cccccc;
+
+        // hero image
+        &__image{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $darker-blue;
+            width:max(40%,200px);
+            background-color: #cccccc63;
+
+            h1{
+                background: rgba(216, 213, 213, 0.068);
+                padding:30px;
+
+            }
+        }
+    }   
+}
+
+.services-container{
+    padding:80px 0 60px;
+   
+    &__list{
+       justify-content: center;
+       align-items: center;
+  
+        &-links{
+            background:none;
+            padding:40px 40px 20px;
+            img{
+                
+                box-shadow: 3px 3px 3px rgb(32, 32, 32);
+            }
+        }
+    }
+}
+.call-back {
+    margin-bottom:70px;
+}
+@include tablet {
+    .services-container {
+        padding:100px 50px;
+
+        &__list {
+            
+            &-links {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content:space-around;
+               
+            }
+        }
+    }
+}
+
+@include desktop {
+    .hero-services{
+        .container{
+
+            &__image {
+                width:max(40%,300px);
+            }
+        }
+    }
+    .services-container{
+        padding:50px 100px;
+
+        &__list{
+           display:flex;
+           flex-wrap: wrap;
+           
+            &-links{
+                display:flex;
+                flex-wrap: nowrap;
+                flex-direction:column;
+                align-items: center;
+                width:33%;
+                padding: 30px 30px 0;   
+            }
+        }
+    }
+    .call-back {
+        margin-bottom:90px;
+    }
+}
+@include largeDesktop {
+    .services {
+        padding:100px 150px;
+        
+        &__text{
+            padding:30px 200px;  
+        }
+        
+    }
+}

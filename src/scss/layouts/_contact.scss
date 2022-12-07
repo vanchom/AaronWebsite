@@ -1,0 +1,101 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+#contact{
+    background:$mulberry;
+    padding:100px 0 10px;
+
+    .contact-form{
+        background:none;
+
+        &__title{
+            text-align: center;
+            background: none;
+        }
+
+        &__form{
+            background:none;
+            padding:50px 30px;
+            text-align: center;
+
+            h3{
+                background:none;
+                text-align: center;
+            }
+            p{
+                padding:20px 20px 0;
+            }
+        }
+    }
+
+    form{
+        background:none;
+        padding:0 50px 50px;
+
+        label{
+            font-family: roboto;
+            background: none;
+            font-size: 1.3rem;
+            padding:50px 0;
+            margin:50px 0;
+        }
+        input{
+            font-family: roboto;
+            background: $grey;
+            font-size: 1rem;
+            padding:10px 0;
+            margin:10px 0;
+            border-radius: 5px;
+            box-shadow: 2px 2px $black;
+        }
+        textarea{
+            box-shadow: 3px 3px 3px $black;
+            border-radius: 5px;
+            font-size:1rem;
+            margin:10px 0;
+            padding:15px;
+        }
+        .submit{
+            background: $dark-blue;
+            width:50%;
+            margin: 15px auto;  
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:$grey;
+            font-size: 1.2rem;
+            padding: 5px 10px 2px;    
+        }
+        .submit:hover{
+            background:$copper;
+            cursor: pointer;
+        }
+    }
+}
+@include tablet {
+    #contact {
+        .contact-form {
+            padding: 50px 100px;
+        }
+
+        form {
+            .submit {
+                width:30%;
+                height:50px;
+                font-size:1.3rem;
+            }
+        }
+    }
+}
+
+@include largeDesktop {
+    #contact {
+        .contact-form {
+            padding:50px 200px;
+
+            // &__form {
+            //     text-align: center;
+            // }
+        }
+    }
+}

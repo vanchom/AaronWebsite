@@ -1,0 +1,23 @@
+@use "../abstracts/mixins" as *;
+
+#about{
+    padding:40px 0 50px;
+
+    .about__title{
+        text-align: center;
+    }
+   
+    .about__text{
+        padding:15px 30px;
+    }
+}
+@include tablet {
+    #about {
+        padding:50px 50px;
+    }
+}
+@include desktop {
+    #about {
+        padding:50px 250px;
+    }
+}

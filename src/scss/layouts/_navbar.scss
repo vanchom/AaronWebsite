@@ -1,0 +1,174 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/Typography" as *;
+@use "../abstracts/mixins" as *;
+
+// Mobile view - Navbar
+
+.navbar{
+    width:100%;
+    box-sizing: border-box;
+    height:max(250px);
+    margin:0;
+    padding: 10px;
+    z-index: 10;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: $darker-blue;
+    position: relative;
+      
+    &__logo{
+        margin: -70px 0 -50px;
+        width:max(10%, 300px);
+        height:20px;    
+        
+    }
+
+    &__details{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color:$white;
+        width:100%;
+        align-items: center;
+        height:max(30px);
+        background: none;
+        padding-top:20px;
+        
+    }
+    &__menu{
+            margin-top: 35px;
+            background: none;
+
+        &-list{
+            display:none;    
+            
+            &.active {
+                display:flex;
+                cursor: pointer;
+                background: $copper;
+                position: absolute;
+                left:0; 
+                top:100%;
+                padding:20px;
+                flex-direction: column;
+                height:max(180px);
+                list-style: none;
+                line-height: 40px;
+                li{
+                    background: none;
+                    display:block;
+                    a{
+                        color:$white;
+                        font-size:2rem;
+                        display:block;
+                    }
+                }
+               }
+        }
+       
+       &-mobile {
+        margin-top:40px;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        width:50px;
+        margin: 10px auto 0;
+        padding:10px;
+        border-radius: 5px;
+            span {
+                display: block;
+                height:3px;
+                width:40px;
+                margin:2px;
+                background:#ccc;
+            }
+            &:hover {
+                background:$copper;
+            }
+       }
+      
+    }
+    
+    
+}
+// Tablet view
+
+@include tablet {
+    
+    .navbar{
+        height:max(200px);
+        position: static;
+     
+
+        &__logo{
+            margin: -70px 0 -50px;
+            width:max(10%, 300px);
+            height:20px;         
+        }
+    
+        &__details{
+            padding:0;
+            margin:50px 0 0;
+            display:flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            
+        }
+        &__menu{
+           
+            &-list{
+                display:flex;
+                flex-wrap: nowrap;
+                justify-content:center;
+                visibility: visible;
+                padding:10px 0;
+                list-style: none;
+                margin-top:0;
+                background: $darker-blue;
+                &--links{
+                    display:flex;
+                    flex-wrap: nowrap;
+                    justify-content:center;
+                    color:$white;
+                    font-size: 1.7rem;
+                    background: $darker-blue;
+                   }
+                   &--links:hover{
+                    color:$copper;
+                   }
+            }
+            
+            &-mobile {
+                display:none;
+            }
+
+           
+            
+        }
+    }
+}
+
+// Desktop View
+@include desktop {
+    
+    .navbar{
+          padding:0;
+          margin:-20px 0 0;
+        &__details{
+            width:60%;      
+        }
+        &__menu{
+                        
+            &-list {
+                &--links{
+                font-size: 2rem;
+               }
+            }
+        }
+    }
+}

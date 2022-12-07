@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as *;
+
+#jobs{
+    margin-top:20px;
+    padding: 50px 0 0;
+    
+    .jobs__title{
+        text-align: center;
+        padding: 40px 0 0;
+    }
+    .jobs__images{
+        margin:40px 0;
+    }
+}
+
+@include tablet {
+    #jobs {
+        padding:50px 60px 0;
+        margin-bottom:-400px;
+
+        .jobs__images{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            &-last{
+visibility: hidden;
+            }
+            .images {
+                width:50%;
+            }
+        }
+    }
+}
+@include desktop {
+    #jobs {
+        padding: 50px 250px;
+        margin-bottom:50px;
+
+        .jobs__images {
+           
+            .images {
+                width: 33.3%;
+            }
+            &-last{
+                visibility:visible;
+                width: 33.3%;
+                            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+#call-back{
+    background:$lilac;
+    width: 100%;
+    margin:0 auto 80px;
+    padding:50px 40px;
+    display:flex;
+    flex-wrap: wrap;
+    
+  
+    .call-back__title{
+        text-align:center;
+        background:none;
+        color:$grey;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        text-shadow:  2px 2px black;
+    }
+    .call-back__form{
+        background: none;
+
+        label{
+            background: none;
+            font-size:1.2rem;
+            font-family:roboto;
+            width:100%;
+        }
+        input{
+            background:$grey;
+            height:2em;
+            border-radius: 5px;
+            padding:15px 0;
+            margin:10px 0;
+        }
+        .submit{
+            background: $dark-blue;
+            width:42%;
+            margin: 25px auto 0;  
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:$grey;
+            font-size: 1.2rem;
+            padding: 5px 10px 2px; 
+            text-shadow: 1px 1px black;  
+            height:42px; 
+            border-radius: 5px;
+        }
+        .submit:hover{
+            background:$copper;
+            cursor: pointer;
+        }
+    }
+}
+@include tablet {
+    #call-back {
+       width:60%;
+       margin-top:50px;
+       box-shadow: 0 1px 1px 1px $black;
+
+       .call-back__form {
+        .submit {
+            width:40%;
+            height:46px;
+            padding:12px;
+        }
+       }
+    }
+}
+@include desktop {
+    #call-back {
+        width:max(40%, 600px);
+    }
+}
